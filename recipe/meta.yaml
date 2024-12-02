@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wholeslidedata-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wholeslidedata-{{ version }}.tar.gz
   sha256: 544c3b8b5cb3973ce9e83b4c92a3acc74b8b51a68e02eb0acfe01d46cb918353
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
     - {{ cdt('mesa-libgl-devel') }}
-    - python >=3.7
+    - python >={{ python_min }}
     - concurrentbuffer >=0.0.7
     - creationism >=0.0.5
     - numpy >=1.20.2
@@ -39,6 +39,7 @@ test:
     - wholeslidedata
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://diagnijmegen.github.io/pathology-whole-slide-data/
