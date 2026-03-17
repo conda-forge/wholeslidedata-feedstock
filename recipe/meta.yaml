@@ -12,14 +12,14 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
   run:
-    - {{ cdt('mesa-libgl-devel') }}
+    - libgl-devel                  None
     - python >={{ python_min }}
     - concurrentbuffer >=0.0.7
     - creationism >=0.0.5
