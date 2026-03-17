@@ -19,7 +19,7 @@ requirements:
     - python {{ python_min }}
     - pip
   run:
-    - libgl-devel                  None
+    - libgl-devel
     - python >={{ python_min }}
     - concurrentbuffer >=0.0.7
     - creationism >=0.0.5
