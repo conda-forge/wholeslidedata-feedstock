@@ -28,12 +28,14 @@ requirements:
     - opencv >=4.4.0
     - scipy >=1.5.2
     - scikit-image >=0.17.2
-    - shapely ==1.7.1
+    - shapely >=1.7.1
     - openslide-python >=1.1.1
     - pyyaml >=5.4.1
     - jsonschema >=4.4.0
-    - rtree ==1.0.0
+    - rtree >=1.0.0
     - matplotlib-base >=3.6.2
+    - dicfg ==0.0.13
+    - sourcelib
 
 test:
   imports:
